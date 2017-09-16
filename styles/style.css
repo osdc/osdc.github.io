@@ -1,6 +1,5 @@
 body
 {
-  background: black;
   margin:0;
 }
 .gradientbox
@@ -31,6 +30,7 @@ body
 .main
 {
   min-height:100vh;
+  background-color:black;
   display:flex;
   flex-flow:column;
   justify-content:center;
@@ -50,8 +50,8 @@ body
   justify-content:center;
   align-items:center;
   align-content:center;
-  -webkit-animation: neon 300ms ease-in-out infinite alternate;
-          animation: neon 300ms ease-in-out infinite alternate;
+  -webkit-animation: neon 900ms ease-in-out infinite alternate;
+          animation: neon 900ms ease-in-out infinite alternate;
   animation-delay:100ms;
   font-size:140px;
   pointer-events:none;
@@ -65,23 +65,36 @@ body
   0% {
     text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
   }
-  25%
+  12%
   {
     text-shadow: 0 0 20px rgba(10, 175, 230, 1.5),  0 0 20px rgba(10, 175, 230, 1);
   }
-  45%
+  18%
+  {
+      text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0.2);
+  }
+  25%
   {
     text-shadow: 0 0 20px rgba(10, 175, 230, 0.9),  0 0 20px rgba(10, 175, 230, 0.3);
   }
-  85%
+  35%
+  {
+    text-shadow: 0 0 20px rgba(10, 175, 230, 0.8),  0 0 20px rgba(10, 175, 230, 0.1);
+  }
+  42%
   {
     text-shadow: 0 0 20px rgba(10, 175, 230, 1.2),  0 0 20px rgba(10, 175, 230, 0);
+  }
+  50%
+  {
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1.6),  0 0 20px rgba(10, 175, 230, 1);
   }
   100%
   {
     text-shadow: 0 0 20px rgba(10, 175, 230, 1.6),  0 0 20px rgba(10, 175, 230, 1);
   }
 }
+/* media queries */
 @media only screen and (max-width:620px)
 {
   .heading
