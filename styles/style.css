@@ -50,7 +50,7 @@ main {
   align-items: center;
   align-content: center;
   -webkit-animation: neon 900ms ease-in-out infinite alternate;
-          animation: neon 900ms ease-in-out infinite alternate;
+  animation: neon 900ms ease-in-out infinite alternate;
   animation-delay: 100ms;
   font-size: 140px;
   pointer-events: none;
