@@ -49,7 +49,6 @@ main {
   justify-content: center;
   align-items: center;
   align-content: center;
-  -webkit-animation: neon 900ms ease-in-out infinite alternate;
   animation: neon 900ms ease-in-out infinite alternate;
   animation-delay: 100ms;
   font-size: 140px;
@@ -58,7 +57,7 @@ main {
 
 /*animation keyframes*/
 
-@-webkit-keyframes neon {
+@keyframes neon {
   0% {
     text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
   }
@@ -88,7 +87,7 @@ main {
 
 /* media queries */
 @media only screen and (max-width:620px) {
-  .heading {
+  .logo {
     font-size: 120px;
     width: 490px;
   }
@@ -101,7 +100,7 @@ main {
 }
 
 @media only screen and (max-width: 520px){
-  .heading {
+  .logo {
     font-size: 100px;
     width: 390px;
     height: 210px;
@@ -116,7 +115,7 @@ main {
 }
 
 @media only screen and (max-width: 420px){
-  .heading {
+  .logo {
     font-size: 87px;
     width: 310px;
     height: 190px;
@@ -132,7 +131,7 @@ main {
 }
 
 @media only screen and (max-width: 336px){
-  .heading {
+  .logo {
     font-size: 80px;
     width: 300px;
     height: 180px;
@@ -148,7 +147,7 @@ main {
 }
 
 @media only screen and (max-width: 316px){
-  .heading {
+  .logo {
     font-size: 75px;
     width: 300px;
     height: 180px;
