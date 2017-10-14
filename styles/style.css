@@ -25,7 +25,7 @@ main {
 }
 
 .arrowdown a {
-  color: #ffa726;
+  color: #ffca28;
 }
 /* arrrow down key animations */
 
@@ -136,7 +136,7 @@ main {
   flex-flow: column;
   padding: 15px;
   margin-left: 200px;
-  font-family: 'Assistant',sans-serif;
+  font-family: 'Assistant','Lato',sans-serif;
 }
 
 .aboutheading {
