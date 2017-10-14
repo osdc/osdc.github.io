@@ -6,6 +6,40 @@ body::-webkit-scrollbar {
     display: none; 
 }
 
+main {
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: #c6e2ff;
+}
+
+.arrowdown {
+  position: absolute;
+  top: 90%;
+  left: 48%;
+  animation: down 1550ms ease-in-out infinite;
+}
+
+.arrowdown a {
+  color: #ffa726;
+}
+/* arrrow down key animations */
+
+@keyframes down {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
 
 .gradientbox {
   height: 300px;
@@ -25,22 +59,11 @@ body::-webkit-scrollbar {
   font-size: 22px;
   font-family: 'Assistant', sans-serif;
   margin-top: -17px;
-  width: 330px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
-}
-
-main {
-  min-height: 100vh;
-  background-color: black;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  color: #c6e2ff;
 }
 
 .logo {
@@ -99,22 +122,27 @@ main {
   align-content: center;
   align-items: center;
   color: white;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .aboutus {
   min-height: 100vh;
+  min-width: 50vw;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
   flex-flow: column;
   padding: 15px;
-  margin-left: 100px;
+  margin-left: 200px;
   font-family: 'Assistant',sans-serif;
 }
 
 .aboutheading {
   font-size: 50px;
+  border-bottom :1px solid white;
+  padding-bottom: 7px;
 }
 
 .aboutText {
@@ -124,14 +152,16 @@ main {
 /* beer glass css*/
 .beerglass {
   min-height: 50vh;
+  min-width: 50vh;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
   position: relative;
-  margin-left: 300px;
-  margin-top: 320px;
-  margin-right: 100px;
+  margin-left: 0;
+  margin-top: 120px;
+  margin-right: 210px;
+  cursor: not-allowed;
 }
 
 .container {
@@ -354,6 +384,14 @@ main {
 
 
 /* media queries */
+
+@media only screen and (min-width: 1000px) {
+  .aboutheading {
+  margin-left: 250px;
+  margin-bottom: 30px;
+  }
+}
+
 @media only screen and (max-width:1000px) {
   .beerglass {
     display: none;
@@ -405,6 +443,9 @@ main {
     height: 200px;
     width: 320px;
   }
+  .about {
+    padding: 10px;
+  }
 }
 
 @media only screen and (max-width: 336px){
@@ -420,6 +461,9 @@ main {
   .gradientbox {
     height: 190px;
     width: 310px;
+  }
+  .about {
+    padding: 10px;
   }
 }
 
