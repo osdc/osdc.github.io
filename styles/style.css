@@ -142,7 +142,7 @@ main {
 
 .aboutheading {
   font-size: 50px;
-  border-bottom : 1px solid white;
+  border-bottom: 1px solid white;
   padding-bottom: 7px;
 }
 
@@ -201,7 +201,7 @@ main {
   border-radius: 25px;
 }
 
-.borderbox .glass {
+.glass {
   position: relative;
   width: 180px;
   height: 245px;
