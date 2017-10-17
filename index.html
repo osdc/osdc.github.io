@@ -9,9 +9,33 @@
   <link href="https://fonts.googleapis.com/css?family=Assistant:200|Lato" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="styles/style.css" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="fullPage.js/jquery.fullPage.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="fullPage.js/vendors/jquery.easings.min.js"></script>
+    <script type="text/javascript" src="fullPage.js/jquery.fullPage.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+            });
+        });
+    </script>
+
+    <style>
+        .section{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <main>
+    
+    
+     <div id="fullpage">
+    <div class="section">
+  
+         <main>
     <div class="gradientbox">
       <div class="logo">
         OSDC
@@ -24,10 +48,12 @@
         <a href="#aboutsection"><i class="fa fa-angle-double-down fa-3x" aria-hidden="true"></i></a>
     </div>
   </main>
-
+        
   <!-- About Us section -->
-
-  <section class="about" id="aboutsection">
+         </div>
+        <div class="section">
+            <div class="slide">
+            <section class="about" id="aboutsection">
     <div class="aboutus">
       <span class="aboutheading">
         About us
@@ -67,5 +93,13 @@
     </div>
     <!-- beer glass section end -->
   </section>
+            </div>
+        </div>
+    </div>
+              
+
+  
+
+  
 </body>
 </html>
