@@ -15,7 +15,12 @@ function addCommit(prevState, user) {
       }
     });
     if (!result) {
-      return { leaderboard: [...prevLeaderboard, { username, commits: 1 }] };
+      return {
+        leaderboard: [
+          ...prevLeaderboard,
+          { username, commits: 1, avatar: user.avatar_url, url: user.html_url }
+        ]
+      };
     } else {
       let newLeaderboard = prevLeaderboard;
       newLeaderboard[index].commits += 1;
@@ -55,7 +60,11 @@ export default class extends React.Component {
     });
     const commitList = sorted.map((user, i) => (
       <li key={i}>
-        {user.username} ==> {user.commits}
+        <img src={user.avatar} />
+        <a href={user.url} target="_blank">
+          {user.username}
+        </a>{' '}
+        ==> {user.commits}
       </li>
     ));
 
