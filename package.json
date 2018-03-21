@@ -8,6 +8,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "@octokit/rest": "^15.2.5",
     "gatsby": "^1.9.238",
     "gatsby-link": "^1.6.39"
   }
