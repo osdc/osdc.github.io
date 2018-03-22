@@ -1,0 +1,200 @@
+html,
+:root,
+body {
+  background-color: wheat;
+  background-size: cover;
+  height: 100%;
+  overflow: auto;
+}
+
+#leaderboard {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  display: flex;
+  font-family: Lato, sans-serif;
+  height: auto;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 1.5rem auto;
+  max-width: 75%;
+  min-width: 320px;
+  width: auto;
+}
+
+#leaderboard header {
+  background-color: #4e6df0;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+#leaderboard header h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+}
+
+.points {
+  float: right;
+  background: #4e6df0;
+  border-radius: 50%;
+  color: #fff;
+  padding: .5rem;
+  text-align: center;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 76em;
+}
+
+.rb-grid {
+  list-style: none;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.rb-grid li {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .25);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: list-item;
+  float: left;
+  font-size: 1.125rem;
+  font-style: italic;
+  list-style-position: inside;
+  list-style-type: decimal;
+  margin-top: -1px;
+  padding: 1.6rem;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: transform .5s ease;
+  width: 100%;
+}
+
+.rb-grid li:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background: #eee;
+}
+
+li p {
+  font-size: 1rem;
+  font-style: normal;
+  margin: 0;
+}
+
+p:first-letter {
+  margin-left: .5rem;
+}
+
+.rb-overlay {
+  background: #fff;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  z-index: -1;
+  pointer-events: none;
+  cursor: default;
+}
+
+.rb-overlay:hover {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 999999999;
+}
+
+.rb-close {
+  position: absolute;
+  top: 0.4em;
+  right: 0.4em;
+  width: 2em;
+  height: 2em;
+  text-indent: -9000px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.rb-close::before {
+  content: 'x';
+  font-weight: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 3em;
+  line-height: 0.6;
+  text-align: center;
+  text-indent: 0px;
+}
+
+.profile {
+  display: block;
+  margin: 2rem 10%;
+  max-width: 75rem;
+  text-align: left;
+  width: 80%;
+}
+
+.profile span {
+  font-style: normal;
+}
+
+.rb-image {
+  float: left;
+  margin: 0 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.profile h2 {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  margin: auto;
+}
+
+.profile strong {
+  line-height: 2;
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 63.125em) {
+  .rb-grid li {
+    width: 100%;
+    text-align: left;
+  }
+  .rb-grid li > div {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 30rem) { 
+  #leaderboard {
+  max-width:90%;
+  }
+  
+  .rb-image {
+    margin: auto;
+    float: none;
+    }
+  
+  .profile strong {
+    margin-left: 0;
+}
+}
