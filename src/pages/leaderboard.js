@@ -12,13 +12,24 @@ const Header = styled.h1`
   text-align: center;
 `;
 
+const Leaderboard = styled.ol`
+  padding: 0;
+`;
+
 const ListItem = styled.li`
   height: 54px;
-  width: 400px;
-  margin: 5px auto;
-  border: 2px solid red;
+  width: 350px;
+  margin: 10px auto;
   font-size: 1.8rem;
   display: flex;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.2s ease-in-out;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.16);
+
+  &:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
 `;
 
 const Avatar = styled.img`
@@ -36,9 +47,10 @@ const Username = styled.span`
 
 const Commits = styled.span`
   padding: 8px;
-  border-left: 2px solid red;
   width: 52px;
   text-align: center;
+  background: rgba(0,0,0,0.12);
+  color: white;
 `;
 
 function addCommit(prevState, user) {
@@ -109,7 +121,7 @@ export default class extends React.Component {
     return (
       <div>
         <Header>Leaderboard</Header>
-        <ol>{commitList}</ol>
+        <Leaderboard>{commitList}</Leaderboard>
       </div>
     );
   }
