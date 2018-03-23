@@ -2,8 +2,6 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "styled-components";
 
-const keyframes = styled.keyframes;
-
 const Linkmain = styled.li`
   display: inline-block;
   font-size: 2.5rem;
@@ -16,34 +14,26 @@ const Linknormal = styled.li`
 `;
 const HeadLinks = styled.ul`
   list-style: none;
+  align-items: left;
 `;
-const Logo = styled.div`
-  box-sizing: border-box;
-  margin: 140px 520px;
-  display: flex;
-  border-radius: 50px;
-  border: 5px solid red;
-  text-shadow: 2px 2px 10px red;
-  font-size: 10rem;
-  padding: 30px 30px;
-  color: white;
-`;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: left;
 `;
-const Body = styled.body`
- background: black;
+const About = styled.h1`
+ margin: 30px 600px;
+ font-size: 3rem;
 `;
- export default({children}) =><Body><Container>
+const AboutSection = styled.p`
+text-align: left;
+margin: 30px 200px;
+font-size: 1.5rem;
+`;
+export default() =><Container>
       <HeadLinks>
         <Linkmain><Link to="/">OPEN SOURCE DEVELOPERS CLUB</Link></Linkmain>
         <Linknormal><Link to="/leaderboard">Community</Link></Linknormal>
         <Linknormal><Link to="/About">About</Link></Linknormal>
       </HeadLinks>
-    <Logo>
-        OSDC
-    </Logo>
-</Container></Body>
+       
+     </Container>
