@@ -1,5 +1,6 @@
 import React from 'react';
 import Octokit from '@octokit/rest';
+import Link from "gatsby-link";
 import styled, { injectGlobal } from 'styled-components';
 
 injectGlobal`
@@ -52,7 +53,19 @@ const Commits = styled.span`
   background: rgba(0,0,0,0.12);
   color: white;
 `;
-
+ const Linkmain = styled.li`
+  display: inline-block;
+  font-size: 2.5rem;
+  padding: 12px;
+`;
+const Linknormal = styled.li`
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 12px;
+`;
+const HeadLinks = styled.ul`
+  list-style: none;
+`;
 function addCommit(prevState, user) {
   if (!user) {
     return prevState;
@@ -118,8 +131,13 @@ export default class extends React.Component {
       </ListItem>
     ));
 
-    return (
+    return (    
       <div>
+        <HeadLinks>
+        <Linkmain><Link to="/">OPEN SOURCE DEVELOPERS CLUB</Link></Linkmain>
+        <Linknormal><Link to="/leaderboard">Community</Link></Linknormal>
+        <Linknormal><Link to="/About">About</Link></Linknormal>
+      </HeadLinks>
         <Header>Leaderboard</Header>
         <Leaderboard>{commitList}</Leaderboard>
       </div>
