@@ -8,3 +8,8 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 
 ## Running in development
 `gatsby develop`
+
+## Team
+
+- [@saranshbarua](https://github.com/saranshbarua) - **Saransh Barua**, Maintainer
+- [@ryzokuken](https://github.com/ryzokuken) - **Ujjwal Sharma**
