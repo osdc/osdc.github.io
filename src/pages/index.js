@@ -259,5 +259,4 @@ export default () => <Container>
 			</Abouttext>
 		</Aboutus>
 	</About>
-	
 </Container>
