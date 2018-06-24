@@ -198,7 +198,20 @@ export default class extends React.Component {
     const sorted = this.state.leaderboard.sort((a, b) => {
       return b.commits - a.commits;
     });
-    const commitList = sorted.map((user, i) => (
+
+    let listLength = sorted.length;
+
+    let standardCommits = sorted.slice(0);
+
+    const topCommits = sorted.slice(0,3);
+
+    standardCommits = standardCommits.splice(3,listLength);
+
+    const topCommitList = topCommits.map((user, i) => (
+      <TopCards value={i} >{user.username}</TopCards>
+    ));
+
+    const commitList = standardCommits.map((user, i) => (
       <ListItem key={i}>
         <Avatar src={user.avatar} />
         <Username>@{user.username}</Username>
@@ -213,9 +226,7 @@ export default class extends React.Component {
         <LeaderboardContainer>
           <LeaderboardContainerLeft>
             <LeftSpan>Top Players</LeftSpan>
-            <TopCards></TopCards>
-            <TopCards></TopCards>
-            <TopCards></TopCards>
+            {topCommitList}
             <RightBorder></RightBorder>
           </LeaderboardContainerLeft>
 
