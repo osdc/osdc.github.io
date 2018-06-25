@@ -37,7 +37,7 @@ const LeaderboardContainer = styled.div`
   height: 80vh; 
   width: 100vw;
   margin-bottom: 100px;
-  @media (max-width: 725px) {
+  @media (max-width: 824px) {
     flex-direction: column;
   }
 `;
@@ -50,6 +50,10 @@ const LeaderboardContainerLeft = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
+  @media (max-width: 824px) {
+    width: 100vw;
+    min-height: 60vh;
+  }
 `;
 
 const LeftSpan = styled.span`
@@ -62,6 +66,9 @@ const LeftSpan = styled.span`
   font-size: 25px;
   font-weight: 600;
   color: #607d8b;
+   @media (max-width: 1220px) {
+    display: none;
+  }
 `;
 
 const RightBorder = styled.div`
@@ -71,19 +78,74 @@ const RightBorder = styled.div`
   top: 30%;
   width: 1px;
   background-color: #e0e0e0;
+  @media (max-width: 850px) {
+    display: none;
+  }
 `;
 
 const TopCards = styled.div`
   height: 150px;
   width: 300px;
-  box-shadow: 0 4px 22px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 4px 22px 0 rgba(0,0,0,0.3);
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const TopCardsTop = styled.div`
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const TopCardsTopLeft = styled.div`
+  height: 100%;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const TopCardsTopRight = styled.div`
+  height: 100%;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Assistant', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-top: 17px;
+  overflow: hidden !important;
+`;
+
+const TopCardsBottom = styled.div`
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+  // padding-bottom: 10px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
 `;
 
 const LeaderboardContainerRight = styled.div`
   width: 60vw;
   max-height: 80vh;
   overflow-y: scroll;
+  @media (max-width: 824px) {
+    width: 100vw;
+    margin-top: 60px;
+  }
 `;
 
 const Leaderboard = styled.ol`
@@ -113,6 +175,14 @@ const Avatar = styled.img`
   margin: 5px;
   margin-top: 15px;
   margin-left: 10px;
+  border: 2px solid #eeeeee;
+`;
+
+const TopAvatar = styled.img`
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  margin-top: 20px;
   border: 2px solid #eeeeee;
 `;
 
@@ -207,9 +277,6 @@ export default class extends React.Component {
 
     standardCommits = standardCommits.splice(3,listLength);
 
-    const topCommitList = topCommits.map((user, i) => (
-      <TopCards value={i} >{user.username}</TopCards>
-    ));
 
     const commitList = standardCommits.map((user, i) => (
       <ListItem key={i}>
@@ -226,7 +293,40 @@ export default class extends React.Component {
         <LeaderboardContainer>
           <LeaderboardContainerLeft>
             <LeftSpan>Top Players</LeftSpan>
-            {topCommitList}
+
+              <TopCards style={{'background-color' : '#ffc400'}}>
+                <TopCardsTop>
+                  <TopCardsTopLeft><TopAvatar src={topCommits[0].avatar} /></TopCardsTopLeft>
+                  <TopCardsTopRight>
+                    <span style={{'fontWeight': 600}}>@{topCommits[0].username}</span>
+                    <span style={{'fontSize': '20px', 'fontWeight': 400}} ><b>{topCommits[0].commits}</b> Commits</span>
+                  </TopCardsTopRight>
+                </TopCardsTop>
+                <TopCardsBottom>Gold</TopCardsBottom>
+              </TopCards>
+
+              <TopCards style={{'background-color' : '#cfd8dc'}}>
+                <TopCardsTop>
+                  <TopCardsTopLeft><TopAvatar src = {topCommits[1].avatar}/></TopCardsTopLeft>
+                  <TopCardsTopRight>
+                    <span style={{'fontWeight': 600}}>@{topCommits[1].username}</span>
+                    <span style={{'fontSize': '20px', 'fontWeight': 400}} ><b>{topCommits[1].commits}</b> Commits</span>
+                  </TopCardsTopRight>
+                </TopCardsTop>
+                <TopCardsBottom>Silver</TopCardsBottom>
+              </TopCards>
+
+              <TopCards style={{'background-color' : '#8d6e63'}}>
+                <TopCardsTop>
+                  <TopCardsTopLeft><TopAvatar src={topCommits[2].avatar} /></TopCardsTopLeft>
+                  <TopCardsTopRight>
+                    <span style={{'fontWeight': 600}}>@{topCommits[2].username}</span>
+                    <span style={{'fontSize': '20px', 'fontWeight': 400}} ><b>{topCommits[2].commits}</b> Commits</span>
+                  </TopCardsTopRight>
+                </TopCardsTop>
+                <TopCardsBottom>Bronze</TopCardsBottom>
+              </TopCards>
+
             <RightBorder></RightBorder>
           </LeaderboardContainerLeft>
 
