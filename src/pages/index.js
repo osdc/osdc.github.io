@@ -8,14 +8,6 @@ import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
 
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
 
-import facebookicon from '../../styles/icons/facebook.png'
-
-import discordicon from '../../styles/icons/discord.svg'
-
-import githubicon from '../../styles/icons/github.png'
-
-import twittericon from '../../styles/icons/twitter.png'
-
 /*Styled Components*/
 
 injectGlobal`
@@ -424,23 +416,19 @@ export default () => <Container>
     <IconsContainer>
       <Alink href="https://github.com/osdc/" target="_blank">
          <GithubLink>
-{/*        <IconLinks src={githubicon} />
-*/}        <span>GITHUB</span>
+          <span>GITHUB</span>
          </GithubLink>
       </Alink>
-      <Alink>
+      <Alink href="https://discord.gg/HJY7aSr" target="_blank">
         <DiscordLink>
-{/*        <IconLinks src={discordicon} />
-*/}        <span>DISCORD</span>
+          <span>DISCORD</span>
         </DiscordLink>
       </Alink>
       <FacebookLink>
-{/*        <IconLinks src={facebookicon} style={{'marginBottom': '4px'}} />
-*/}        <span>FACEBOOK</span>
+        <span>FACEBOOK</span>
       </FacebookLink>
       <TwitterLink>
-{/*        <IconLinks src={twittericon} />
-*/}        <span>TWITTER</span>
+       <span>TWITTER</span>
       </TwitterLink>
     </IconsContainer>
   </ContactSection>
