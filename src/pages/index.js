@@ -424,12 +424,16 @@ export default () => <Container>
           <span>DISCORD</span>
         </DiscordLink>
       </Alink>
-      <FacebookLink>
-        <span>FACEBOOK</span>
-      </FacebookLink>
-      <TwitterLink>
-       <span>TWITTER</span>
-      </TwitterLink>
+      <Alink href="https://www.facebook.com/groups/jiitlug/" target="_blank">
+        <FacebookLink>
+          <span>FACEBOOK</span>
+        </FacebookLink>
+      </Alink>
+      <Alink href="https://twitter.com/JIITOSDC" target="_blank">
+        <TwitterLink>
+         <span>TWITTER</span>
+        </TwitterLink>
+      </Alink>
     </IconsContainer>
   </ContactSection>
 
