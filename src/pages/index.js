@@ -8,7 +8,6 @@ import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
 
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
 
-
 /*Styled Components*/
 
 injectGlobal`
@@ -234,6 +233,158 @@ const Abouttext = styled.p`
   letter-spacing: 0.02em;
 `;
 
+/* Contact links */
+
+const ContactSection = styled.div`
+  min-height: 400px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 40px;
+  background-color: black;
+  color: white;
+  font-family: 'Assistant', sans-serif;
+`;
+
+const FindHead = styled.div`
+  font-size: 55px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid white;
+`;
+
+const IconsContainer = styled.div`
+  min-height: 150px;
+  width: 60%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+const GithubLink = styled.div`
+  height: 45px;
+  width: 180px;
+  border: 1px solid #f50057;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #f50057;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 180px 0px 0 0 #f50057;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+`;
+
+const DiscordLink = styled.div`
+  height: 45px;
+  width: 180px;
+  border: 1px solid #ffca28;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffca28;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 180px 0px 0 0 #ffca28;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+`;
+
+const FacebookLink = styled.div`
+  height: 45px;
+  width: 180px;
+  border: 1px solid #76ff03;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #76ff03;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 180px 0px 0 0 #76ff03;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+`;
+
+const TwitterLink = styled.div`
+  height: 45px;
+  width: 180px;
+  border: 1px solid #00b0ff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #00b0ff;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 180px 0px 0 0 #00b0ff;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+`;
+
+const IconLinks = styled.img`
+  height: 30px;
+  width: 30px;
+  color: white;
+`;
+
+const Alink = styled.a`
+  text-decoration: none;
+  outline: none !important;
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:active {
+    outline: none;
+    text-decoration: none;
+  }
+`;
+
 
 /*Main*/
 
@@ -259,4 +410,31 @@ export default () => <Container>
 			</Abouttext>
 		</Aboutus>
 	</About>
+
+  <ContactSection>
+    <FindHead>Find us on</FindHead>
+    <IconsContainer>
+      <Alink href="https://github.com/osdc/" target="_blank">
+         <GithubLink>
+          <span>GITHUB</span>
+         </GithubLink>
+      </Alink>
+      <Alink href="https://discord.gg/HJY7aSr" target="_blank">
+        <DiscordLink>
+          <span>DISCORD</span>
+        </DiscordLink>
+      </Alink>
+      <Alink href="https://www.facebook.com/groups/jiitlug/" target="_blank">
+        <TwitterLink>
+         <span>FACEBOOK</span>
+        </TwitterLink>
+      </Alink>
+      <Alink href="https://osdc.github.io/blog/" target="_blank">
+        <FacebookLink>
+          <span>BLOG</span>
+        </FacebookLink>
+      </Alink>
+    </IconsContainer>
+  </ContactSection>
+
 </Container>
