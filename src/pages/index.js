@@ -8,6 +8,13 @@ import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
 
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
 
+import facebookicon from '../../styles/icons/facebook.png'
+
+import discordicon from '../../styles/icons/discord.svg'
+
+import githubicon from '../../styles/icons/github.png'
+
+import twittericon from '../../styles/icons/twitter.png'
 
 /*Styled Components*/
 
@@ -234,6 +241,158 @@ const Abouttext = styled.p`
   letter-spacing: 0.02em;
 `;
 
+/* Contact links */
+
+const ContactSection = styled.div`
+  min-height: 400px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 40px;
+  background-color: black;
+  color: white;
+  font-family: 'Assistant', sans-serif;
+`;
+
+const FindHead = styled.div`
+  font-size: 55px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid white;
+`;
+
+const IconsContainer = styled.div`
+  min-height: 150px;
+  width: 60%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+const GithubLink = styled.div`
+  height: 45px;
+  width: 180px;
+  border: 1px solid #f50057;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #f50057;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 180px 0px 0 0 #f50057;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+`;
+
+const DiscordLink = styled.div`
+  height: 45px;
+  width: 180px;
+  border: 1px solid #ffca28;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffca28;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 180px 0px 0 0 #ffca28;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+`;
+
+const FacebookLink = styled.div`
+  height: 45px;
+  width: 180px;
+  border: 1px solid #76ff03;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #76ff03;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 180px 0px 0 0 #76ff03;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+`;
+
+const TwitterLink = styled.div`
+  height: 45px;
+  width: 180px;
+  border: 1px solid #00b0ff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #00b0ff;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 180px 0px 0 0 #00b0ff;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+`;
+
+const IconLinks = styled.img`
+  height: 30px;
+  width: 30px;
+  color: white;
+`;
+
+const Alink = styled.a`
+  text-decoration: none;
+  outline: none !important;
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:active {
+    outline: none;
+    text-decoration: none;
+  }
+`;
+
 
 /*Main*/
 
@@ -259,4 +418,31 @@ export default () => <Container>
 			</Abouttext>
 		</Aboutus>
 	</About>
+
+  <ContactSection>
+    <FindHead>Find us on</FindHead>
+    <IconsContainer>
+      <Alink href="https://github.com/osdc/" target="_blank">
+         <GithubLink>
+{/*        <IconLinks src={githubicon} />
+*/}        <span>GITHUB</span>
+         </GithubLink>
+      </Alink>
+      <Alink>
+        <DiscordLink>
+{/*        <IconLinks src={discordicon} />
+*/}        <span>DISCORD</span>
+        </DiscordLink>
+      </Alink>
+      <FacebookLink>
+{/*        <IconLinks src={facebookicon} style={{'marginBottom': '4px'}} />
+*/}        <span>FACEBOOK</span>
+      </FacebookLink>
+      <TwitterLink>
+{/*        <IconLinks src={twittericon} />
+*/}        <span>TWITTER</span>
+      </TwitterLink>
+    </IconsContainer>
+  </ContactSection>
+
 </Container>

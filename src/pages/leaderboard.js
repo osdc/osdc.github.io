@@ -12,12 +12,6 @@ injectGlobal`
     font-family: 'Assistant';
     src: url(${Assistant});
   }
-
-  body {
-    max-height: 100vh !important;
-    overflow: hidden;
-  }
-
 `;
 
 const Header = styled.h1`
@@ -92,6 +86,11 @@ const TopCards = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  &:hover {
+    box-shadow: 0 4px 25px 0 rgba(0,0,0,0.5);
+  }
+
 `;
 
 const TopCardsTop = styled.div`
