@@ -77,7 +77,7 @@ const RightBorder = styled.div`
   }
 `;
 
-const TopCards = styled.div`
+const TopCards = styled.li`
   height: 150px;
   width: 300px;
   box-shadow: 0 4px 22px 0 rgba(0,0,0,0.3);
@@ -86,6 +86,7 @@ const TopCards = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 30px;
 
   &:hover {
     box-shadow: 0 4px 25px 0 rgba(0,0,0,0.5);
@@ -148,6 +149,10 @@ const LeaderboardContainerRight = styled.div`
 `;
 
 const Leaderboard = styled.ol`
+  padding: 0;
+`;
+
+const TopLeaders = styled.ol`
   padding: 0;
 `;
 
@@ -241,7 +246,7 @@ function addCommit(prevState, user) {
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { leaderboard: [] };
+    this.state = { leaderboard: [] , topCards: [{ background : '#ffc400' , status : 'Gold' }, { background : '#cfd8dc' , status : 'Silver' }, { background : '#8d6e63' , status : 'Bronze' }] };
     this.octokit = new Octokit();
   }
 
@@ -268,11 +273,12 @@ export default class extends React.Component {
       return b.commits - a.commits;
     });
 
+
     let listLength = sorted.length;
 
     let standardCommits = sorted.slice(0);
 
-    const topCommits = sorted.slice(0,3);
+    let topCommits = standardCommits.slice(0,3);
 
     standardCommits = standardCommits.splice(3,listLength);
 
@@ -285,6 +291,21 @@ export default class extends React.Component {
       </ListItem>
     ));
 
+    
+
+    const topCommitList = topCommits.map((users, i) => (
+      <TopCards key={i} style={{'backgroundColor' : this.state.topCards[i].background}}>
+        <TopCardsTop>
+          <TopCardsTopLeft><TopAvatar src={users.avatar} /></TopCardsTopLeft>
+          <TopCardsTopRight>
+            <span style={{'fontWeight': 600}}>@{users.username}</span>
+            <span style={{'fontSize': '20px', 'fontWeight': 400}} ><b>{users.commits}</b> Commits</span>
+          </TopCardsTopRight>
+        </TopCardsTop>
+        <TopCardsBottom>{this.state.topCards[i].status}</TopCardsBottom>
+      </TopCards>
+    ));
+
     return (
       <div>
         <Header>Leaderboard</Header>
@@ -292,40 +313,9 @@ export default class extends React.Component {
         <LeaderboardContainer>
           <LeaderboardContainerLeft>
             <LeftSpan>Top Players</LeftSpan>
-
-              <TopCards style={{'background-color' : '#ffc400'}}>
-                <TopCardsTop>
-                  <TopCardsTopLeft><TopAvatar src={topCommits[0].avatar} /></TopCardsTopLeft>
-                  <TopCardsTopRight>
-                    <span style={{'fontWeight': 600}}>@{topCommits[0].username}</span>
-                    <span style={{'fontSize': '20px', 'fontWeight': 400}} ><b>{topCommits[0].commits}</b> Commits</span>
-                  </TopCardsTopRight>
-                </TopCardsTop>
-                <TopCardsBottom>Gold</TopCardsBottom>
-              </TopCards>
-
-              <TopCards style={{'background-color' : '#cfd8dc'}}>
-                <TopCardsTop>
-                  <TopCardsTopLeft><TopAvatar src = {topCommits[1].avatar}/></TopCardsTopLeft>
-                  <TopCardsTopRight>
-                    <span style={{'fontWeight': 600}}>@{topCommits[1].username}</span>
-                    <span style={{'fontSize': '20px', 'fontWeight': 400}} ><b>{topCommits[1].commits}</b> Commits</span>
-                  </TopCardsTopRight>
-                </TopCardsTop>
-                <TopCardsBottom>Silver</TopCardsBottom>
-              </TopCards>
-
-              <TopCards style={{'background-color' : '#8d6e63'}}>
-                <TopCardsTop>
-                  <TopCardsTopLeft><TopAvatar src={topCommits[2].avatar} /></TopCardsTopLeft>
-                  <TopCardsTopRight>
-                    <span style={{'fontWeight': 600}}>@{topCommits[2].username}</span>
-                    <span style={{'fontSize': '20px', 'fontWeight': 400}} ><b>{topCommits[2].commits}</b> Commits</span>
-                  </TopCardsTopRight>
-                </TopCardsTop>
-                <TopCardsBottom>Bronze</TopCardsBottom>
-              </TopCards>
-
+              <TopLeaders>
+                {topCommitList}
+              </TopLeaders>
             <RightBorder></RightBorder>
           </LeaderboardContainerLeft>
 
