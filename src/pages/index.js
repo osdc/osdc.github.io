@@ -1,5 +1,7 @@
 import React from "react";
 
+import Link from "gatsby-link";
+
 import styled, {keyframes} from "styled-components";
 
 import { injectGlobal } from 'styled-components';
@@ -85,6 +87,28 @@ const Main = styled.div`
 	justify-content: center;
 	align-items: center;
 	color: #c6e2ff;
+`;
+
+const LeaderboardLink = styled.div`
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  outline: none !important;
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:active {
+    outline: none;
+    text-decoration: none;
+  }
 `;
 
 const Gradientbox = styled.div`
@@ -389,6 +413,9 @@ const Alink = styled.a`
 /*Main*/
 
 export default () => <Container>
+  
+  <LeaderboardLink><Link to="/leaderboard" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'white'}} >Leaderboard</Link></LeaderboardLink>
+
 	<Main>
 		<Gradientbox>
 			<Logo>OSDC</Logo>

@@ -243,7 +243,7 @@ function addCommit(prevState, user) {
   }
 }
 
-export default class extends React.Component {
+export default class LeaderboardComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = { leaderboard: [] , topCards: [{ background : '#ffc400' , status : 'Gold' }, { background : '#cfd8dc' , status : 'Silver' }, { background : '#8d6e63' , status : 'Bronze' }] };
