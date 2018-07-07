@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'gatsby-link';
 import Octokit from '@octokit/rest';
 import styled, { injectGlobal } from 'styled-components';
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
@@ -12,6 +13,20 @@ injectGlobal`
     font-family: 'Assistant';
     src: url(${Assistant});
   }
+`;
+
+const BackButton = styled.span`
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+
+  &:hover {
+    cursor: pointer;
+  }
+   
 `;
 
 const Header = styled.h1`
@@ -308,6 +323,7 @@ export default class LeaderboardComponent extends React.Component {
 
     return (
       <div>
+        <BackButton><Link to="/" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'black'}} >Back to main</Link></BackButton>
         <Header>Leaderboard</Header>
 
         <LeaderboardContainer>
