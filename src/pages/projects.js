@@ -4,34 +4,6 @@ import Octokit from '@octokit/rest';
 import styled, { injectGlobal } from 'styled-components';
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
 
-// function addCommit(prevState, user) {
-//   if (!user) {
-//     return prevState;
-//   } else {
-//     const username = user.login;
-//     const prevLeaderboard = prevState.leaderboard;
-//     let index;
-//     const result = prevLeaderboard.find((user, i) => {
-//       if (user.username === username) {
-//         index = i;
-//         return true;
-//       }
-//     });
-//     if (!result) {
-//       return {
-//         leaderboard: [
-//           ...prevLeaderboard,
-//           { username, commits: 1, avatar: user.avatar_url, url: user.html_url }
-//         ]
-//       };
-//     } else {
-//       let newLeaderboard = prevLeaderboard;
-//       newLeaderboard[index].commits += 1;
-//       return { leaderboard: newLeaderboard };
-//     }
-//   }
-// }
-
 function addProject(prevState, repo) {
   if(!repo) {
     return prevState;
