@@ -20,7 +20,7 @@ function addProject(prevState, repo) {
 export default class Projects extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {projects : []};
+		this.state = {projects : [] , sortBy : ''};
     this.octokit = new Octokit();
 	}
 
@@ -36,21 +36,26 @@ export default class Projects extends React.Component {
     this.getLeaderboard();
   }
 
+  
+
 	render() {
 
-    const sortByForks = this.state.projects.sort((a, b) => {
+    const projectList = this.state.projects.slice(0);
+
+    let sortByForks = projectList.sort((a, b) => {
       return b.forks - a.forks;
     });
 
-    console.log(this.state.projects);
-    console.log("--------------------------------");
+    // let sortByStars = sorted.sort((a, b) => {
+    //   return b.stars - a.stars;
+    // });
+
+    // let sortByUpdatedat = projectList.sort((a, b) => {
+    //   return b.updatedat - a.updatedat;
+    // });
+
+
     console.log(sortByForks);
-
-    const sortByLastupdated = this.state.projects.sort((a, b) => {
-      return b.updatedat - a.updatedat;
-    });
-
-
 
     const list = this.state.projects.map((project, i) => (
       <li key={i}>{project.reponame} || {project.forks} || {project.updatedat} || {project.stars}</li>
@@ -58,6 +63,7 @@ export default class Projects extends React.Component {
 
 		return(
       <div>
+        <button onClick={() => this.setState({sortBy : 'stars'})}>Sort by stars</button>
         <br />
         <span>List of projects</span>
         <ul>
