@@ -288,6 +288,7 @@ export default class LeaderboardComponent extends React.Component {
       return b.commits - a.commits;
     });
 
+    console.log(sorted);
 
     let listLength = sorted.length;
 

@@ -1,13 +1,8 @@
 import React from "react";
-
 import Link from "gatsby-link";
-
 import styled, {keyframes} from "styled-components";
-
 import { injectGlobal } from 'styled-components';
-
 import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
-
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
 
 /*Styled Components*/
