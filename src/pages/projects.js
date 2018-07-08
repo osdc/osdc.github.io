@@ -24,7 +24,7 @@ export default class Projects extends React.Component {
     this.octokit = new Octokit();
 	}
 
-	getLeaderboard() {
+	getProjects() {
     this.octokit.repos.getForOrg({ org: 'osdc' }).then(repos => {
       repos.data.forEach((repo) => {
         this.setState(prevState => addProject(prevState, repo));
@@ -33,31 +33,32 @@ export default class Projects extends React.Component {
   }
 
   componentDidMount() {
-    this.getLeaderboard();
+    this.getProjects();
   }
 
-  
-
 	render() {
-
     const projectList = this.state.projects.slice(0);
 
     let sortByForks = projectList.sort((a, b) => {
       return b.forks - a.forks;
     });
 
-    // let sortByStars = sorted.sort((a, b) => {
-    //   return b.stars - a.stars;
-    // });
+    let sortByStars = sortByForks.sort((a, b) => {
+      return b.stars - a.stars;
+    });
 
-    // let sortByUpdatedat = projectList.sort((a, b) => {
-    //   return b.updatedat - a.updatedat;
-    // });
+    let sortByUpdatedat = sortByStars.sort((a, b) => {
+      return b.updatedat - a.updatedat;
+    });
 
 
     console.log(sortByForks);
+    console.log('===========');
+    console.log(sortByStars);
+    console.log('===========');
+    console.log(sortByUpdatedat);
 
-    const list = this.state.projects.map((project, i) => (
+    let list = this.state.projects.map((project, i) => (
       <li key={i}>{project.reponame} || {project.forks} || {project.updatedat} || {project.stars}</li>
     ));
 
