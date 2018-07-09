@@ -205,7 +205,7 @@ const TopAvatar = styled.img`
   border: 2px solid #eeeeee;
 `;
 
-const Username = styled.span`
+const Username = styled.a`
   flex-grow: 1;
   padding: 8px;
   height: 90px;
@@ -216,6 +216,22 @@ const Username = styled.span`
   font-family: 'Assistant', sans-serif;
   font-size: 20px;
   font-weight: 400;
+  outline: none;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    outline: none;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 const Commits = styled.span`
@@ -294,6 +310,7 @@ export default class LeaderboardComponent extends React.Component {
 
     let standardCommits = sorted.slice(0);
 
+
     let topCommits = standardCommits.slice(0,3);
 
     standardCommits = standardCommits.splice(3,listLength);
@@ -302,7 +319,7 @@ export default class LeaderboardComponent extends React.Component {
     const commitList = standardCommits.map((user, i) => (
       <ListItem key={i}>
         <Avatar src={user.avatar} />
-        <Username>@{user.username}</Username>
+        <Username href={user.url} target="_blank">@{user.username}</Username>
         <Commits>{user.commits}</Commits>
       </ListItem>
     ));
