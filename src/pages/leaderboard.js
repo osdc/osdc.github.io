@@ -234,6 +234,28 @@ const Username = styled.a`
   }
 `;
 
+const LeaderLink = styled.a`
+  font-family: 'Assistant', sans-serif;
+  font-weight: 600;
+  outline: none;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    outline: none;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    color: black;
+  }
+`;
+
+
 const Commits = styled.span`
   padding: 8px;
   width: 52px;
@@ -331,7 +353,7 @@ export default class LeaderboardComponent extends React.Component {
         <TopCardsTop>
           <TopCardsTopLeft><TopAvatar src={users.avatar} /></TopCardsTopLeft>
           <TopCardsTopRight>
-            <span style={{'fontWeight': 600}}>@{users.username}</span>
+            <LeaderLink href={users.url} target="_blank">@{users.username}</LeaderLink>
             <span style={{'fontSize': '20px', 'fontWeight': 400}} ><b>{users.commits}</b> Commits</span>
           </TopCardsTopRight>
         </TopCardsTop>
