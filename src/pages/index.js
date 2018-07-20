@@ -4,6 +4,11 @@ import styled, {keyframes} from "styled-components";
 import { injectGlobal } from 'styled-components';
 import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faAngleDoubleDown)
 
 /*Styled Components*/
 
@@ -416,12 +421,12 @@ export default () => <Container>
 			<Logo>OSDC</Logo>
 		</Gradientbox>
 		<Subheading>Open Source Developers Club</Subheading>
-		<Arrowdown><a href="#aboutsection"><i className="fa fa-angle-double-down fa-3x" aria-hidden="true"></i></a></Arrowdown>
+		<Arrowdown><a href="#aboutsection"><FontAwesomeIcon icon="angle-double-down" color="#ffca28" size="2x" /></a></Arrowdown>
 	</Main>
 
 	<About>
 		<Aboutus>
-			<Aboutheading>About us</Aboutheading>
+			<Aboutheading id="aboutsection">About us</Aboutheading>
 			<Abouttext>
 				We are an Open Source Community based in and around Jaypee Institute of Information Technology, Noida, India. A community of web developers, android freaks, machine learning enthusiasts, hackers, designers, game developers and most significantly Explorers.
 				We welcome those who believe in the open source philosophy and are willing to sacrifice their naps in order to change the world.
