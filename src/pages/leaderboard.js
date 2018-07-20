@@ -3,6 +3,12 @@ import Link from 'gatsby-link';
 import Octokit from '@octokit/rest';
 import styled, { injectGlobal } from 'styled-components';
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faLongArrowAltLeft)
+
 
 injectGlobal`
   * {
@@ -363,7 +369,7 @@ export default class LeaderboardComponent extends React.Component {
 
     return (
       <div>
-        <BackButton><Link to="/" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'black'}} >Back to main</Link></BackButton>
+        <BackButton><Link to="/" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'black'}} ><FontAwesomeIcon icon="long-arrow-alt-left" color="#445a64" size="2x" /></Link></BackButton>
         <Header>Leaderboard</Header>
 
         <LeaderboardContainer>
