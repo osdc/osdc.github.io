@@ -1,7 +1,14 @@
 import React from 'react';
+import Link from 'gatsby-link';
 import Octokit from '@octokit/rest';
 import styled, { injectGlobal } from 'styled-components';
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faLongArrowAltLeft)
+
 
 injectGlobal`
   * {
@@ -12,6 +19,20 @@ injectGlobal`
     font-family: 'Assistant';
     src: url(${Assistant});
   }
+`;
+
+const BackButton = styled.span`
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+
+  &:hover {
+    cursor: pointer;
+  }
+   
 `;
 
 const Header = styled.h1`
@@ -190,7 +211,7 @@ const TopAvatar = styled.img`
   border: 2px solid #eeeeee;
 `;
 
-const Username = styled.span`
+const Username = styled.a`
   flex-grow: 1;
   padding: 8px;
   height: 90px;
@@ -201,7 +222,45 @@ const Username = styled.span`
   font-family: 'Assistant', sans-serif;
   font-size: 20px;
   font-weight: 400;
+  outline: none;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    outline: none;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    color: black;
+  }
 `;
+
+const LeaderLink = styled.a`
+  font-family: 'Assistant', sans-serif;
+  font-weight: 600;
+  outline: none;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    outline: none;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    color: black;
+  }
+`;
+
 
 const Commits = styled.span`
   padding: 8px;
@@ -243,7 +302,7 @@ function addCommit(prevState, user) {
   }
 }
 
-export default class extends React.Component {
+export default class LeaderboardComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = { leaderboard: [] , topCards: [{ background : '#ffc400' , status : 'Gold' }, { background : '#cfd8dc' , status : 'Silver' }, { background : '#8d6e63' , status : 'Bronze' }] };
@@ -273,10 +332,12 @@ export default class extends React.Component {
       return b.commits - a.commits;
     });
 
+    console.log(sorted);
 
     let listLength = sorted.length;
 
     let standardCommits = sorted.slice(0);
+
 
     let topCommits = standardCommits.slice(0,3);
 
@@ -286,7 +347,7 @@ export default class extends React.Component {
     const commitList = standardCommits.map((user, i) => (
       <ListItem key={i}>
         <Avatar src={user.avatar} />
-        <Username>@{user.username}</Username>
+        <Username href={user.url} target="_blank">@{user.username}</Username>
         <Commits>{user.commits}</Commits>
       </ListItem>
     ));
@@ -298,7 +359,7 @@ export default class extends React.Component {
         <TopCardsTop>
           <TopCardsTopLeft><TopAvatar src={users.avatar} /></TopCardsTopLeft>
           <TopCardsTopRight>
-            <span style={{'fontWeight': 600}}>@{users.username}</span>
+            <LeaderLink href={users.url} target="_blank">@{users.username}</LeaderLink>
             <span style={{'fontSize': '20px', 'fontWeight': 400}} ><b>{users.commits}</b> Commits</span>
           </TopCardsTopRight>
         </TopCardsTop>
@@ -308,6 +369,7 @@ export default class extends React.Component {
 
     return (
       <div>
+        <BackButton><Link to="/" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'black'}} ><FontAwesomeIcon icon="long-arrow-alt-left" color="#445a64" size="2x" /></Link></BackButton>
         <Header>Leaderboard</Header>
 
         <LeaderboardContainer>

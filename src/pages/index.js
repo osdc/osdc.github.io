@@ -1,12 +1,14 @@
 import React from "react";
-
+import Link from "gatsby-link";
 import styled, {keyframes} from "styled-components";
-
 import { injectGlobal } from 'styled-components';
-
 import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
-
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faAngleDoubleDown)
 
 /*Styled Components*/
 
@@ -85,6 +87,28 @@ const Main = styled.div`
 	justify-content: center;
 	align-items: center;
 	color: #c6e2ff;
+`;
+
+const LeaderboardLink = styled.div`
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  outline: none !important;
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:active {
+    outline: none;
+    text-decoration: none;
+  }
 `;
 
 const Gradientbox = styled.div`
@@ -389,15 +413,18 @@ const Alink = styled.a`
 /*Main*/
 
 export default () => <Container>
+  
+  <LeaderboardLink><Link to="/leaderboard" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'white'}} >Leaderboard</Link></LeaderboardLink>
+
 	<Main>
 		<Gradientbox>
 			<Logo>OSDC</Logo>
 		</Gradientbox>
 		<Subheading>Open Source Developers Club</Subheading>
-		<Arrowdown><a href="#aboutsection"><i className="fa fa-angle-double-down fa-3x" aria-hidden="true"></i></a></Arrowdown>
+		<Arrowdown><a href="#aboutsection"><FontAwesomeIcon icon="angle-double-down" color="#ffca28" size="2x" /></a></Arrowdown>
 	</Main>
 
-	<About>
+	<About id="aboutsection">
 		<Aboutus>
 			<Aboutheading>About us</Aboutheading>
 			<Abouttext>
