@@ -424,9 +424,9 @@ export default () => <Container>
 		<Arrowdown><a href="#aboutsection"><FontAwesomeIcon icon="angle-double-down" color="#ffca28" size="2x" /></a></Arrowdown>
 	</Main>
 
-	<About>
+	<About id="aboutsection">
 		<Aboutus>
-			<Aboutheading id="aboutsection">About us</Aboutheading>
+			<Aboutheading>About us</Aboutheading>
 			<Abouttext>
 				We are an Open Source Community based in and around Jaypee Institute of Information Technology, Noida, India. A community of web developers, android freaks, machine learning enthusiasts, hackers, designers, game developers and most significantly Explorers.
 				We welcome those who believe in the open source philosophy and are willing to sacrifice their naps in order to change the world.
