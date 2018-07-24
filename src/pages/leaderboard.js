@@ -325,14 +325,13 @@ export default class LeaderboardComponent extends React.Component {
 
   componentDidMount() {
     this.getLeaderboard();
+    console.log(this.octokit.state);
   }
 
   render() {
     const sorted = this.state.leaderboard.sort((a, b) => {
       return b.commits - a.commits;
     });
-
-    console.log(sorted);
 
     let listLength = sorted.length;
 
@@ -369,7 +368,7 @@ export default class LeaderboardComponent extends React.Component {
 
     return (
       <div>
-        <BackButton><Link to="/" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'black'}} ><FontAwesomeIcon icon="long-arrow-alt-left" color="#445a64" size="2x" /></Link></BackButton>
+        <BackButton><Link to="/" style={{'outline' : 'none' ,'textDecoration' : 'none', 'color' : 'black'}} ><FontAwesomeIcon icon="long-arrow-alt-left" color="#445a64" size="2x" /></Link></BackButton>
         <Header>Leaderboard</Header>
 
         <LeaderboardContainer>
