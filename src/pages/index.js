@@ -317,7 +317,7 @@ const GithubLink = styled.div`
   }
 `;
 
-const DiscordLink = styled.div`
+const SlackLink = styled.div`
   width: 180px;
   border: 1px solid #ffca28;
   display: flex;
@@ -343,30 +343,6 @@ const DiscordLink = styled.div`
 
 const FacebookLink = styled.div`
   width: 180px;
-  border: 1px solid #76ff03;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 12px;
-  font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-  color: #76ff03;
-  transition: all 180ms ease-in-out;
-
-  &:hover {
-    box-shadow: inset 210px 0px 0 0 #76ff03;
-    cursor: pointer;
-    color: black;
-  }
-
-  @media (max-width: 600px) {
-    margin-bottom: 15px;
-  }
-`;
-
-const TwitterLink = styled.div`
-  width: 180px;
   border: 1px solid #00b0ff;
   display: flex;
   justify-content: space-evenly;
@@ -380,6 +356,30 @@ const TwitterLink = styled.div`
 
   &:hover {
     box-shadow: inset 210px 0px 0 0 #00b0ff;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+`;
+
+const BlogLink = styled.div`
+  width: 180px;
+  border: 1px solid #76ff03;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: 'Assistant', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #76ff03;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 210px 0px 0 0 #76ff03;
     cursor: pointer;
     color: black;
   }
@@ -414,9 +414,6 @@ const Alink = styled.a`
 /*Main*/
 
 export default () => <Container>
-  
-{/*  <LeaderboardLink><Link to="/leaderboard" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'white'}} >Leaderboard</Link></LeaderboardLink>
-*/}
 	<Main>
 		<Gradientbox>
 			<Logo>OSDC</Logo>
@@ -447,20 +444,20 @@ export default () => <Container>
           <span>GITHUB</span>
          </GithubLink>
       </Alink>
-      <Alink href="https://discord.gg/HJY7aSr" target="_blank">
-        <DiscordLink>
-          <span>DISCORD</span>
-        </DiscordLink>
+      <Alink href="https://join.slack.com/t/jiit-lug/shared_invite/enQtNDA3NDIzNzc5MTU5LTIzNGExYWZiYTg3MWY5NWE1YWI0ODgxZTNhOGNkZjI0ZGFhM2VhZWFhYjM0MWRlOTNlMTIwYTA5ZGJhYTYyNzQ" target="_blank">
+        <SlackLink>
+          <span>SLACK</span>
+        </SlackLink>
       </Alink>
       <Alink href="https://www.facebook.com/groups/jiitlug/" target="_blank">
-        <TwitterLink>
+        <FacebookLink>
          <span>FACEBOOK</span>
-        </TwitterLink>
+        </FacebookLink>
       </Alink>
       <Alink href="https://osdc.github.io/blog/" target="_blank">
-        <FacebookLink>
+        <BlogLink>
           <span>BLOG</span>
-        </FacebookLink>
+        </BlogLink>
       </Alink>
     </IconsContainer>
   </ContactSection>
