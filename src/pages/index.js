@@ -281,6 +281,10 @@ const FindHead = styled.div`
   font-size: 55px;
   padding-bottom: 7px;
   border-bottom: 1px solid white;
+
+  @media (max-width: 600px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const IconsContainer = styled.div`
