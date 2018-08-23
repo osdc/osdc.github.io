@@ -249,6 +249,7 @@ const Aboutheading = styled.span`
   font-size: 55px;
   border-bottom: 1px solid white;
   padding-bottom: 7px;
+  margin-bottom: 45px;
 `;
 
 const Abouttext = styled.p`
@@ -266,10 +267,14 @@ const ContactSection = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 0px;
   background-color: black;
   color: white;
   font-family: 'Assistant', sans-serif;
+
+  @media (max-width: 420px) {
+    padding-top: 40px;
+  }
 `;
 
 const FindHead = styled.div`
@@ -280,7 +285,7 @@ const FindHead = styled.div`
 
 const IconsContainer = styled.div`
   min-height: 150px;
-  width: 60%;
+  width: 75%;
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
@@ -289,7 +294,6 @@ const IconsContainer = styled.div`
 `;
 
 const GithubLink = styled.div`
-  height: 45px;
   width: 180px;
   border: 1px solid #f50057;
   display: flex;
@@ -303,7 +307,7 @@ const GithubLink = styled.div`
   transition: all 180ms ease-in-out;
 
   &:hover {
-    box-shadow: inset 180px 0px 0 0 #f50057;
+    box-shadow: inset 210px 0px 0 0 #f50057;
     cursor: pointer;
     color: black;
   }
@@ -314,7 +318,6 @@ const GithubLink = styled.div`
 `;
 
 const DiscordLink = styled.div`
-  height: 45px;
   width: 180px;
   border: 1px solid #ffca28;
   display: flex;
@@ -328,7 +331,7 @@ const DiscordLink = styled.div`
   transition: all 180ms ease-in-out;
 
   &:hover {
-    box-shadow: inset 180px 0px 0 0 #ffca28;
+    box-shadow: inset 210px 0px 0 0 #ffca28;
     cursor: pointer;
     color: black;
   }
@@ -339,7 +342,6 @@ const DiscordLink = styled.div`
 `;
 
 const FacebookLink = styled.div`
-  height: 45px;
   width: 180px;
   border: 1px solid #76ff03;
   display: flex;
@@ -353,7 +355,7 @@ const FacebookLink = styled.div`
   transition: all 180ms ease-in-out;
 
   &:hover {
-    box-shadow: inset 180px 0px 0 0 #76ff03;
+    box-shadow: inset 210px 0px 0 0 #76ff03;
     cursor: pointer;
     color: black;
   }
@@ -364,7 +366,6 @@ const FacebookLink = styled.div`
 `;
 
 const TwitterLink = styled.div`
-  height: 45px;
   width: 180px;
   border: 1px solid #00b0ff;
   display: flex;
@@ -378,7 +379,7 @@ const TwitterLink = styled.div`
   transition: all 180ms ease-in-out;
 
   &:hover {
-    box-shadow: inset 180px 0px 0 0 #00b0ff;
+    box-shadow: inset 210px 0px 0 0 #00b0ff;
     cursor: pointer;
     color: black;
   }
