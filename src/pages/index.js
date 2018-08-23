@@ -414,8 +414,8 @@ const Alink = styled.a`
 
 export default () => <Container>
   
-  <LeaderboardLink><Link to="/leaderboard" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'white'}} >Leaderboard</Link></LeaderboardLink>
-
+{/*  <LeaderboardLink><Link to="/leaderboard" style={{'outline' : 'none' ,'text-decoration' : 'none', 'color' : 'white'}} >Leaderboard</Link></LeaderboardLink>
+*/}
 	<Main>
 		<Gradientbox>
 			<Logo>OSDC</Logo>
