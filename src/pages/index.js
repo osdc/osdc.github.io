@@ -7,6 +7,7 @@ import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
+import {Helmet} from 'react-helmet'
 
 library.add(faAngleDoubleDown)
 
@@ -28,7 +29,7 @@ injectGlobal`
 	}
 
 	body::-webkit-scrollbar {
-    	display: none; 
+    	display: none;
 	}
 `;
 
@@ -419,6 +420,9 @@ const Alink = styled.a`
 
 export default () => <Container>
 	<Main>
+	<Helmet><title>OSDC</title>
+	<link rel="icon" type="image/png" href="https://avatars1.githubusercontent.com/u/919383?s=200&v=4" sizes="16x16" />
+	</Helmet>
 		<Gradientbox>
 			<Logo>OSDC</Logo>
 		</Gradientbox>
