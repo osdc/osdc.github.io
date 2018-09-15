@@ -442,7 +442,7 @@ export default () => <Container>
 				We welcome those who believe in the open source philosophy and are willing to sacrifice their naps in order to change the world.
 			</Abouttext>
 			<Abouttext>
-				We also organise various workshops, talks and hackathons in an effort towards encouraging more people to lean into the open source world!
+				We also organize various workshops, talks and hackathons in an effort towards encouraging more people to lean into the open source world!
         		We love having late night conversations on tech and building new things. If you love the same just hop in, we are looking forward for your participation.
 			</Abouttext>
 		</Aboutus>
