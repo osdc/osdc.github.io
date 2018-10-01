@@ -1,36 +1,36 @@
 import React from "react";
 import Link from "gatsby-link";
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { injectGlobal } from 'styled-components';
 import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import {Helmet} from 'react-helmet'
+import { Helmet } from 'react-helmet';
 
-library.add(faAngleDoubleDown)
+library.add(faAngleDoubleDown);
 
 /*Styled Components*/
 
 injectGlobal`
-	body {
-		margin: 0;
-	}
+  body {
+    margin: 0;
+  }
 
-	@font-face {
-		font-family: 'Monoton';
-		src: url(${Monoton});
-	}
+  @font-face {
+    font-family: 'Monoton';
+    src: url(${Monoton});
+  }
 
-	@font-face {
-		font-family: 'Assistant';
-		src: url(${Assistant});
-	}
+  @font-face {
+    font-family: 'Assistant';
+    src: url(${Assistant});
+  }
 
-	body::-webkit-scrollbar {
-    	display: none;
-	}
+  body::-webkit-scrollbar {
+      display: none;
+  }
 `;
 
 /*Animation Keyframes*/
@@ -77,17 +77,17 @@ const down = keyframes`
 /*Animation keyframes ending*/
 
 const Container = styled.div`
-	min-height: 100vh;
+  min-height: 100vh;
 `;
 
 const Main = styled.div`
-	min-height: 100vh;
- 	background-color: black;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-	color: #c6e2ff;
+  min-height: 100vh;
+   background-color: black;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: #c6e2ff;
 `;
 
 const LeaderboardLink = styled.div`
@@ -122,22 +122,22 @@ const Gradientbox = styled.div`
   align-items: center;
   border-radius: 10px;
   @media (max-width: 620px) {
-  	width: 500px;
+    width: 500px;
   }
   @media (max-width: 520px) {
-  	width: 400px;
+    width: 400px;
     height: 220px;
   }
   @media (max-width: 420px) {
-  	height: 200px;
+    height: 200px;
     width: 320px;
   }
   @media (max-width: 336px) {
-  	height: 190px;
+    height: 190px;
     width: 310px;
   }
   @media (max-width: 316px) {
-  	background: transparent;
+    background: transparent;
   }
 `;
 
@@ -156,32 +156,30 @@ const Logo = styled.div`
   font-size: 140px;
   pointer-events: none;
   @media (max-width: 620px) {
-  	font-size: 120px;
+    font-size: 120px;
     width: 490px;
   }
   @media (max-width: 520px) {
-  	font-size: 100px;
+    font-size: 100px;
     width: 390px;
     height: 210px;
   }
   @media (max-width: 420px) {
-  	font-size: 87px;
+    font-size: 87px;
     width: 310px;
     height: 190px;;
   }
   @media (max-width: 336px) {
-  	font-size: 80px;
+    font-size: 80px;
     width: 300px;
     height: 180px;
   }
   @media (max-width: 316px) {
-  	font-size: 75px;
+    font-size: 75px;
     width: 300px;
     height: 180px;
   }
 `;
-
-
 
 const Subheading = styled.span`
   background-color: black;
@@ -194,21 +192,21 @@ const Subheading = styled.span`
   justify-content: center;
   align-items: center;
   @media (max-width:620px) {
-  	font-size: 22px;
+    font-size: 22px;
   }
   @media (max-width: 520px) {
-  	font-size: 20px;
+    font-size: 20px;
   }
   @media (max-width: 420px) {
-  	font-size: 17px;
+    font-size: 17px;
     width: 250px;
   }
   @media (max-width: 336px) {
-  	font-size: 17px;
+    font-size: 17px;
     width: 250px;
   }
   @media (max-width: 316px) {
-  	font-size: 15px;
+    font-size: 15px;
     width: 250px
   }
 `;
@@ -231,7 +229,7 @@ const About = styled.section`
   padding-left: 100px;
   padding-right: 100px;
   @media (max-width: 420px) {
-  	padding: 10px;
+    padding: 10px;
   }
 `;
 
@@ -415,38 +413,54 @@ const Alink = styled.a`
   }
 `;
 
+const handleArrowClick = (e) => {
+  e.preventDefault();
 
-/*Main*/
+  // get the id of the element to scroll to. e.g. "#aboutsection"
+  const targetQuery = e.currentTarget.getAttribute('href');
+
+  // scoll the element into view
+  document.querySelector(targetQuery).scrollIntoView({ behavior: 'smooth' });
+
+  // set the URL hash to the href attribute
+  if (history.pushState) {
+    history.pushState(null, null, targetQuery);
+  } else {
+    location.hash = targetQuery;
+  }
+};
+
+/* Main */
 
 export default () => <Container>
-	<Helmet>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Home Page for the Open Source Developers Community" />
-	<title>OSDC</title>
-	<link rel="icon" type="image/png" href="https://avatars1.githubusercontent.com/u/919383?s=200&v=4" sizes="16x16" />
-	</Helmet>
-	<Main>
-		<Gradientbox>
-			<Logo>OSDC</Logo>
-		</Gradientbox>
-		<Subheading>Open Source Developers Club</Subheading>
-		<Arrowdown><a href="#aboutsection"><FontAwesomeIcon icon="angle-double-down" color="#ffca28" size="2x" /></a></Arrowdown>
-	</Main>
+  <Helmet>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Home Page for the Open Source Developers Community" />
+  <title>OSDC</title>
+  <link rel="icon" type="image/png" href="https://avatars1.githubusercontent.com/u/919383?s=200&v=4" sizes="16x16" />
+  </Helmet>
+  <Main>
+    <Gradientbox>
+      <Logo>OSDC</Logo>
+    </Gradientbox>
+    <Subheading>Open Source Developers Club</Subheading>
+    <Arrowdown><a href="#aboutsection" onClick={handleArrowClick}><FontAwesomeIcon icon="angle-double-down" color="#ffca28" size="2x" /></a></Arrowdown>
+  </Main>
 
-	<About id="aboutsection">
-		<Aboutus>
-			<Aboutheading>About us</Aboutheading>
-			<Abouttext>
-				We are an Open Source Community based in and around Jaypee Institute of Information Technology, Noida, India. A community of web developers, android freaks, machine learning enthusiasts, hackers, designers, game developers and most significantly Explorers.
-				We welcome those who believe in the open source philosophy and are willing to sacrifice their naps in order to change the world.
-			</Abouttext>
-			<Abouttext>
-				We also organize various workshops, talks and hackathons in an effort towards encouraging more people to lean into the open source world!
-        		We love having late night conversations on tech and building new things. If you love the same just hop in, we are looking forward for your participation.
-			</Abouttext>
-		</Aboutus>
-	</About>
+  <About id="aboutsection">
+    <Aboutus>
+      <Aboutheading>About us</Aboutheading>
+      <Abouttext>
+        We are an Open Source Community based in and around Jaypee Institute of Information Technology, Noida, India. A community of web developers, android freaks, machine learning enthusiasts, hackers, designers, game developers and most significantly Explorers.
+        We welcome those who believe in the open source philosophy and are willing to sacrifice their naps in order to change the world.
+      </Abouttext>
+      <Abouttext>
+        We also organize various workshops, talks and hackathons in an effort towards encouraging more people to lean into the open source world!
+            We love having late night conversations on tech and building new things. If you love the same just hop in, we are looking forward for your participation.
+      </Abouttext>
+    </Aboutus>
+  </About>
 
   <ContactSection>
     <FindHead>Find us on</FindHead>
