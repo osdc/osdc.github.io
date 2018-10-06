@@ -1,5 +1,7 @@
 # OSDC website
 OSDC's website, built on GatsbyJS and ReactJS.
+<br>
+## [osdc.surge.sh](https://osdc.surge.sh/)
 
 ## Setup
 `yarn`
