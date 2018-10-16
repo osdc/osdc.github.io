@@ -6,6 +6,8 @@ OSDC's website, built on GatsbyJS and ReactJS.
 ## Setup
 `yarn`
 
+`npm install --global gatsby-cli`
+
 ## Running in development
 `gatsby develop`
 
