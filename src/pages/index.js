@@ -184,7 +184,7 @@ const Logo = styled.div`
 const Subheading = styled.span`
   background-color: black;
   z-index: 5;
-  font-size: 22px;
+  font-size: 23px;
   font-family: 'Assistant', sans-serif;
   margin-top: -17px;
   width: 300px;
@@ -198,7 +198,7 @@ const Subheading = styled.span`
     font-size: 20px;
   }
   @media (max-width: 420px) {
-    font-size: 17px;
+    font-size: 19px;
     width: 250px;
   }
   @media (max-width: 336px) {
@@ -252,9 +252,12 @@ const Aboutheading = styled.span`
 `;
 
 const Abouttext = styled.p`
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 23px;
+  font-weight: 400;
   letter-spacing: 0.02em;
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
 `;
 
 /* Contact links */
@@ -304,8 +307,8 @@ const GithubLink = styled.div`
   align-items: center;
   padding: 12px;
   font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 23px;
   color: #f50057;
   transition: all 180ms ease-in-out;
 
@@ -318,6 +321,10 @@ const GithubLink = styled.div`
   @media (max-width: 600px) {
     margin-bottom: 15px;
   }
+
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
 `;
 
 const SlackLink = styled.div`
@@ -328,8 +335,8 @@ const SlackLink = styled.div`
   align-items: center;
   padding: 12px;
   font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 23px;
   color: #ffca28;
   transition: all 180ms ease-in-out;
 
@@ -342,6 +349,10 @@ const SlackLink = styled.div`
   @media (max-width: 600px) {
     margin-bottom: 15px;
   }
+
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
 `;
 
 const FacebookLink = styled.div`
@@ -352,8 +363,8 @@ const FacebookLink = styled.div`
   align-items: center;
   padding: 12px;
   font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 23px;
   color: #00b0ff;
   transition: all 180ms ease-in-out;
 
@@ -366,6 +377,10 @@ const FacebookLink = styled.div`
   @media (max-width: 600px) {
     margin-bottom: 15px;
   }
+
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
 `;
 
 const BlogLink = styled.div`
@@ -376,8 +391,8 @@ const BlogLink = styled.div`
   align-items: center;
   padding: 12px;
   font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 23px;
   color: #76ff03;
   transition: all 180ms ease-in-out;
 
@@ -389,6 +404,10 @@ const BlogLink = styled.div`
 
   @media (max-width: 600px) {
     margin-bottom: 15px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 20px;
   }
 `;
 
