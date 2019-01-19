@@ -489,10 +489,10 @@ export default () => <Container>
           <span>GITHUB</span>
          </GithubLink>
       </Alink>
-      <Alink href="https://join.slack.com/t/jiit-lug/shared_invite/enQtNDI0MjM5NzcxNTM5LWY4M2U1YmFjMDYxZTZhMzQxMGIwN2QwOWUzZTQxNjAyYjFmMTQyMWEzYzkxZTkyMzQxOTNiNTFhYTRlYmMzOTY" target="_blank">
-        <SlackLink>
-          <span>SLACK</span>
-        </SlackLink>
+      <Alink href="https://t.me/jiitosdc" target="_blank">
+        <TelegramLink>
+          <span>Telegram</span>
+        </TelegramLink>
       </Alink>
       <Alink href="https://www.facebook.com/groups/jiitlug/" target="_blank">
         <FacebookLink>
