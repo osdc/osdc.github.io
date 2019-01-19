@@ -491,7 +491,7 @@ export default () => <Container>
       </Alink>
       <Alink href="https://t.me/jiitosdc" target="_blank">
         <TelegramLink>
-          <span>Telegram</span>
+          <span>TELEGRAM</span>
         </TelegramLink>
       </Alink>
       <Alink href="https://www.facebook.com/groups/jiitlug/" target="_blank">
