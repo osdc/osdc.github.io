@@ -327,7 +327,7 @@ const GithubLink = styled.div`
   }
 `;
 
-const SlackLink = styled.div`
+const TelegramLink = styled.div`
   width: 180px;
   border: 1px solid #ffca28;
   display: flex;
