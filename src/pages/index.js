@@ -1,7 +1,5 @@
 import React from "react";
-import Link from "gatsby-link";
-import styled, { keyframes } from "styled-components";
-import { injectGlobal } from 'styled-components';
+import styled, { keyframes , createGlobalStyle } from "styled-components";
 import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -13,7 +11,7 @@ library.add(faAngleDoubleDown);
 
 /*Styled Components*/
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
   }
@@ -88,28 +86,6 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   color: #c6e2ff;
-`;
-
-const LeaderboardLink = styled.div`
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  font-family: 'Assistant', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: white;
-  text-decoration: none;
-  outline: none !important;
-
-  &:focus {
-    outline: none;
-    text-decoration: none;
-  }
-
-  &:active {
-    outline: none;
-    text-decoration: none;
-  }
 `;
 
 const Gradientbox = styled.div`
@@ -411,12 +387,6 @@ const BlogLink = styled.div`
   }
 `;
 
-const IconLinks = styled.img`
-  height: 30px;
-  width: 30px;
-  color: white;
-`;
-
 const Alink = styled.a`
   text-decoration: none;
   outline: none !important;
@@ -438,20 +408,21 @@ const handleArrowClick = (e) => {
   // get the id of the element to scroll to. e.g. "#aboutsection"
   const targetQuery = e.currentTarget.getAttribute('href');
 
-  // scoll the element into view
+  // scroll the element into view
   document.querySelector(targetQuery).scrollIntoView({ behavior: 'smooth' });
 
   // set the URL hash to the href attribute
-  if (history.pushState) {
-    history.pushState(null, null, targetQuery);
+  if (window.history.state) {
+    window.history.pushState(null, null, targetQuery);
   } else {
-    location.hash = targetQuery;
+    window.location.hash = targetQuery;
   }
 };
 
 /* Main */
 
 export default () => <Container>
+  <GlobalStyle />
   <Helmet>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -506,5 +477,4 @@ export default () => <Container>
       </Alink>
     </IconsContainer>
   </ContactSection>
-
 </Container>
