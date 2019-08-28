@@ -1,7 +1,6 @@
 # example netlify.toml
 [build]
   command = "gatsby build"
-  functions = "functions"
   publish = "public"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app. 
