@@ -1,7 +1,5 @@
 import React from "react";
-import Link from "gatsby-link";
-import styled, { keyframes } from "styled-components";
-import { injectGlobal } from 'styled-components';
+import styled, { keyframes , createGlobalStyle } from "styled-components";
 import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
 import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -13,7 +11,7 @@ library.add(faAngleDoubleDown);
 
 /*Styled Components*/
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
   }
@@ -90,28 +88,6 @@ const Main = styled.div`
   color: #c6e2ff;
 `;
 
-const LeaderboardLink = styled.div`
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  font-family: 'Assistant', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  color: white;
-  text-decoration: none;
-  outline: none !important;
-
-  &:focus {
-    outline: none;
-    text-decoration: none;
-  }
-
-  &:active {
-    outline: none;
-    text-decoration: none;
-  }
-`;
-
 const Gradientbox = styled.div`
   height: 300px;
   width: 600px;
@@ -184,7 +160,7 @@ const Logo = styled.div`
 const Subheading = styled.span`
   background-color: black;
   z-index: 5;
-  font-size: 22px;
+  font-size: 23px;
   font-family: 'Assistant', sans-serif;
   margin-top: -17px;
   width: 300px;
@@ -198,7 +174,7 @@ const Subheading = styled.span`
     font-size: 20px;
   }
   @media (max-width: 420px) {
-    font-size: 17px;
+    font-size: 19px;
     width: 250px;
   }
   @media (max-width: 336px) {
@@ -252,9 +228,12 @@ const Aboutheading = styled.span`
 `;
 
 const Abouttext = styled.p`
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 23px;
+  font-weight: 400;
   letter-spacing: 0.02em;
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
 `;
 
 /* Contact links */
@@ -304,8 +283,8 @@ const GithubLink = styled.div`
   align-items: center;
   padding: 12px;
   font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 23px;
   color: #f50057;
   transition: all 180ms ease-in-out;
 
@@ -318,9 +297,13 @@ const GithubLink = styled.div`
   @media (max-width: 600px) {
     margin-bottom: 15px;
   }
+
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
 `;
 
-const SlackLink = styled.div`
+const TelegramLink = styled.div`
   width: 180px;
   border: 1px solid #ffca28;
   display: flex;
@@ -328,8 +311,8 @@ const SlackLink = styled.div`
   align-items: center;
   padding: 12px;
   font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 23px;
   color: #ffca28;
   transition: all 180ms ease-in-out;
 
@@ -342,6 +325,10 @@ const SlackLink = styled.div`
   @media (max-width: 600px) {
     margin-bottom: 15px;
   }
+
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
 `;
 
 const FacebookLink = styled.div`
@@ -352,8 +339,8 @@ const FacebookLink = styled.div`
   align-items: center;
   padding: 12px;
   font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 23px;
   color: #00b0ff;
   transition: all 180ms ease-in-out;
 
@@ -366,6 +353,10 @@ const FacebookLink = styled.div`
   @media (max-width: 600px) {
     margin-bottom: 15px;
   }
+
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
 `;
 
 const BlogLink = styled.div`
@@ -376,8 +367,8 @@ const BlogLink = styled.div`
   align-items: center;
   padding: 12px;
   font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 23px;
   color: #76ff03;
   transition: all 180ms ease-in-out;
 
@@ -390,12 +381,10 @@ const BlogLink = styled.div`
   @media (max-width: 600px) {
     margin-bottom: 15px;
   }
-`;
 
-const IconLinks = styled.img`
-  height: 30px;
-  width: 30px;
-  color: white;
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
 `;
 
 const Alink = styled.a`
@@ -419,20 +408,21 @@ const handleArrowClick = (e) => {
   // get the id of the element to scroll to. e.g. "#aboutsection"
   const targetQuery = e.currentTarget.getAttribute('href');
 
-  // scoll the element into view
+  // scroll the element into view
   document.querySelector(targetQuery).scrollIntoView({ behavior: 'smooth' });
 
   // set the URL hash to the href attribute
-  if (history.pushState) {
-    history.pushState(null, null, targetQuery);
+  if (window.history.state) {
+    window.history.pushState(null, null, targetQuery);
   } else {
-    location.hash = targetQuery;
+    window.location.hash = targetQuery;
   }
 };
 
 /* Main */
 
 export default () => <Container>
+  <GlobalStyle />
   <Helmet>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -470,10 +460,10 @@ export default () => <Container>
           <span>GITHUB</span>
          </GithubLink>
       </Alink>
-      <Alink href="https://join.slack.com/t/jiit-lug/shared_invite/enQtNDA3NDIzNzc5MTU5LTIzNGExYWZiYTg3MWY5NWE1YWI0ODgxZTNhOGNkZjI0ZGFhM2VhZWFhYjM0MWRlOTNlMTIwYTA5ZGJhYTYyNzQ" target="_blank">
-        <SlackLink>
-          <span>SLACK</span>
-        </SlackLink>
+      <Alink href="https://t.me/jiitosdc" target="_blank">
+        <TelegramLink>
+          <span>TELEGRAM</span>
+        </TelegramLink>
       </Alink>
       <Alink href="https://www.facebook.com/groups/jiitlug/" target="_blank">
         <FacebookLink>
@@ -487,5 +477,4 @@ export default () => <Container>
       </Alink>
     </IconsContainer>
   </ContactSection>
-
 </Container>
