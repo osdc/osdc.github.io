@@ -1,11 +1,11 @@
 import React from "react";
-import styled, { keyframes , createGlobalStyle } from "styled-components";
-import Monoton from '../../styles/fonts/Monoton-Regular.ttf';
-import Assistant from '../../styles/fonts/Assistant-ExtraLight.ttf';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import { Helmet } from 'react-helmet';
+import styled, { keyframes, createGlobalStyle } from "styled-components";
+import Monoton from "../../styles/fonts/Monoton-Regular.ttf";
+import Assistant from "../../styles/fonts/Assistant-ExtraLight.ttf";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from "react-helmet";
 
 library.add(faAngleDoubleDown);
 
@@ -80,7 +80,7 @@ const Container = styled.div`
 
 const Main = styled.div`
   min-height: 100vh;
-   background-color: black;
+  background-color: black;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -91,7 +91,13 @@ const Main = styled.div`
 const Gradientbox = styled.div`
   height: 300px;
   width: 600px;
-  background-image: linear-gradient(90deg, #f50057 0%,#242323 35%, #00b0ff 60%, #76ff03  100%);
+  background-image: linear-gradient(
+    90deg,
+    #f50057 0%,
+    #242323 35%,
+    #00b0ff 60%,
+    #76ff03 100%
+  );
   position: relative;
   display: flex;
   justify-content: center;
@@ -119,10 +125,10 @@ const Gradientbox = styled.div`
 
 const Logo = styled.div`
   background-color: black;
-  background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+  background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
   height: 290px;
   width: 590px;
-  font-family: 'Monoton', cursive;
+  font-family: "Monoton", cursive;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -143,7 +149,7 @@ const Logo = styled.div`
   @media (max-width: 420px) {
     font-size: 87px;
     width: 310px;
-    height: 190px;;
+    height: 190px;
   }
   @media (max-width: 336px) {
     font-size: 80px;
@@ -161,13 +167,13 @@ const Subheading = styled.span`
   background-color: black;
   z-index: 5;
   font-size: 23px;
-  font-family: 'Assistant', sans-serif;
+  font-family: "Assistant", sans-serif;
   margin-top: -17px;
   width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width:620px) {
+  @media (max-width: 620px) {
     font-size: 22px;
   }
   @media (max-width: 520px) {
@@ -183,7 +189,7 @@ const Subheading = styled.span`
   }
   @media (max-width: 316px) {
     font-size: 15px;
-    width: 250px
+    width: 250px;
   }
 `;
 
@@ -217,7 +223,7 @@ const Aboutus = styled.div`
   align-items: center;
   flex-flow: column;
   padding: 15px;
-  font-family: 'Assistant',sans-serif;
+  font-family: "Assistant", sans-serif;
 `;
 
 const Aboutheading = styled.span`
@@ -248,7 +254,7 @@ const ContactSection = styled.div`
   padding-top: 0px;
   background-color: black;
   color: white;
-  font-family: 'Assistant', sans-serif;
+  font-family: "Assistant", sans-serif;
 
   @media (max-width: 420px) {
     padding-top: 40px;
@@ -282,7 +288,7 @@ const GithubLink = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding: 12px;
-  font-family: 'Assistant', sans-serif;
+  font-family: "Assistant", sans-serif;
   font-weight: 400;
   font-size: 23px;
   color: #f50057;
@@ -310,7 +316,7 @@ const TelegramLink = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding: 12px;
-  font-family: 'Assistant', sans-serif;
+  font-family: "Assistant", sans-serif;
   font-weight: 400;
   font-size: 23px;
   color: #ffca28;
@@ -338,7 +344,7 @@ const FacebookLink = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding: 12px;
-  font-family: 'Assistant', sans-serif;
+  font-family: "Assistant", sans-serif;
   font-weight: 400;
   font-size: 23px;
   color: #00b0ff;
@@ -366,7 +372,7 @@ const BlogLink = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding: 12px;
-  font-family: 'Assistant', sans-serif;
+  font-family: "Assistant", sans-serif;
   font-weight: 400;
   font-size: 23px;
   color: #76ff03;
@@ -402,14 +408,14 @@ const Alink = styled.a`
   }
 `;
 
-const handleArrowClick = (e) => {
+const handleArrowClick = e => {
   e.preventDefault();
 
   // get the id of the element to scroll to. e.g. "#aboutsection"
-  const targetQuery = e.currentTarget.getAttribute('href');
+  const targetQuery = e.currentTarget.getAttribute("href");
 
   // scroll the element into view
-  document.querySelector(targetQuery).scrollIntoView({ behavior: 'smooth' });
+  document.querySelector(targetQuery).scrollIntoView({ behavior: "smooth" });
 
   // set the URL hash to the href attribute
   if (window.history.state) {
@@ -421,60 +427,81 @@ const handleArrowClick = (e) => {
 
 /* Main */
 
-export default () => <Container>
-  <GlobalStyle />
-  <Helmet>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Home Page for the Open Source Developers Community" />
-  <title>OSDC</title>
-  <link rel="icon" type="image/png" href="https://avatars1.githubusercontent.com/u/919383?s=200&v=4" sizes="16x16" />
-  </Helmet>
-  <Main>
-    <Gradientbox>
-      <Logo>OSDC</Logo>
-    </Gradientbox>
-    <Subheading>Open Source Developers Club</Subheading>
-    <Arrowdown><a href="#aboutsection" onClick={handleArrowClick}><FontAwesomeIcon icon="angle-double-down" color="#ffca28" size="2x" /></a></Arrowdown>
-  </Main>
+export default () => (
+  <Container>
+    <GlobalStyle />
+    <Helmet>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta
+        name="description"
+        content="Home Page for the Open Source Developers Community"
+      />
+      <title>OSDC</title>
+      <link
+        rel="icon"
+        type="image/png"
+        href="https://avatars1.githubusercontent.com/u/919383?s=200&v=4"
+        sizes="16x16"
+      />
+    </Helmet>
+    <Main>
+      <Gradientbox>
+        <Logo>OSDC</Logo>
+      </Gradientbox>
+      <Subheading>Open Source Developers Club</Subheading>
+      <Arrowdown>
+        <a href="#aboutsection" onClick={handleArrowClick}>
+          <FontAwesomeIcon icon="angle-double-down" color="#ffca28" size="2x" />
+        </a>
+      </Arrowdown>
+    </Main>
 
-  <About id="aboutsection">
-    <Aboutus>
-      <Aboutheading>About us</Aboutheading>
-      <Abouttext>
-        We are an Open Source Community based in and around Jaypee Institute of Information Technology, Noida, India. A community of web developers, android freaks, machine learning enthusiasts, hackers, designers, game developers and most significantly Explorers.
-        We welcome those who believe in the open source philosophy and are willing to sacrifice their naps in order to change the world.
-      </Abouttext>
-      <Abouttext>
-        We also organize various workshops, talks and hackathons in an effort towards encouraging more people to lean into the open source world!
-            We love having late night conversations on tech and building new things. If you love the same just hop in, we are looking forward for your participation.
-      </Abouttext>
-    </Aboutus>
-  </About>
+    <About id="aboutsection">
+      <Aboutus>
+        <Aboutheading>About us</Aboutheading>
+        <Abouttext>
+          We are an Open Source Community based in and around Jaypee Institute
+          of Information Technology, Noida, India. A community of web
+          developers, android freaks, machine learning enthusiasts, hackers,
+          designers, game developers and most significantly Explorers. We
+          welcome those who believe in the open source philosophy and are
+          willing to sacrifice their naps in order to change the world.
+        </Abouttext>
+        <Abouttext>
+          We also organize various workshops, talks and hackathons in an effort
+          towards encouraging more people to lean into the open source world! We
+          love having late night conversations on tech and building new things.
+          If you love the same just hop in, we are looking forward for your
+          participation.
+        </Abouttext>
+      </Aboutus>
+    </About>
 
-  <ContactSection>
-    <FindHead>Find us on</FindHead>
-    <IconsContainer>
-      <Alink href="https://github.com/osdc/" target="_blank">
-         <GithubLink>
-          <span>GITHUB</span>
-         </GithubLink>
-      </Alink>
-      <Alink href="https://t.me/jiitosdc" target="_blank">
-        <TelegramLink>
-          <span>TELEGRAM</span>
-        </TelegramLink>
-      </Alink>
-      <Alink href="https://www.facebook.com/groups/jiitlug/" target="_blank">
-        <FacebookLink>
-         <span>FACEBOOK</span>
-        </FacebookLink>
-      </Alink>
-      <Alink href="https://osdc.github.io/blog/" target="_blank">
-        <BlogLink>
-          <span>BLOG</span>
-        </BlogLink>
-      </Alink>
-    </IconsContainer>
-  </ContactSection>
-</Container>
+    <ContactSection>
+      <FindHead>Find us on</FindHead>
+      <IconsContainer>
+        <Alink href="https://github.com/osdc/" target="_blank">
+          <GithubLink>
+            <span>GITHUB</span>
+          </GithubLink>
+        </Alink>
+        <Alink href="https://t.me/jiitosdc" target="_blank">
+          <TelegramLink>
+            <span>TELEGRAM</span>
+          </TelegramLink>
+        </Alink>
+        <Alink href="https://www.facebook.com/groups/jiitlug/" target="_blank">
+          <FacebookLink>
+            <span>FACEBOOK</span>
+          </FacebookLink>
+        </Alink>
+        <Alink href="https://osdc.github.io/blog/" target="_blank">
+          <BlogLink>
+            <span>BLOG</span>
+          </BlogLink>
+        </Alink>
+      </IconsContainer>
+    </ContactSection>
+  </Container>
+);
