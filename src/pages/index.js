@@ -418,7 +418,7 @@ const handleArrowClick = e => {
   document.querySelector(targetQuery).scrollIntoView({ behavior: "smooth" });
 
   // set the URL hash to the href attribute
-  if (window.history.state) {
+  if (window.history.pushstate) {
     window.history.pushState(null, null, targetQuery);
   } else {
     window.location.hash = targetQuery;
