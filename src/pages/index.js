@@ -309,6 +309,34 @@ const GithubLink = styled.div`
   }
 `;
 
+const TwitterLink = styled.div`
+  width: 180px;
+  border: 1px solid #00b0ff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+  font-family: "Assistant", sans-serif;
+  font-weight: 400;
+  font-size: 23px;
+  color: #00b0ff;
+  transition: all 180ms ease-in-out;
+
+  &:hover {
+    box-shadow: inset 210px 0px 0 0 #00b0ff;
+    cursor: pointer;
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 20px;
+  }
+`;
+
 const TelegramLink = styled.div`
   width: 180px;
   border: 1px solid #ffca28;
@@ -485,6 +513,11 @@ export default () => (
           <GithubLink>
             <span>GITHUB</span>
           </GithubLink>
+        </Alink>
+        <Alink href="https://twitter.com/osdcjiit" target="_blank">
+          <TwitterLink>
+            <span>TWITTER</span>
+          </TwitterLink>
         </Alink>
         <Alink href="https://t.me/jiitosdc" target="_blank">
           <TelegramLink>
