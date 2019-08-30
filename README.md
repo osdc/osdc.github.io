@@ -13,6 +13,7 @@ Live at [osdc.netlify.com](https://osdc.netlify.com).🚀
 - Fork and then clone the repository.
 - Install [yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable)
 - Run `yarn` to install the necessary packages.
+- Install [`gatsby-cli`](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli).
 - Run `gatsby develop` to run the website in development mode on `localhost:8000`.
 
 ## Contribute
