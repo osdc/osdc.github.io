@@ -1,6 +1,6 @@
 # Open Source Developers Community (OSDC) Official Website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b0a6511e-d7f3-4d1b-9799-4a33cf97d4d9/deploy-status)](https://app.netlify.com/sites/osdc/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/04e07cd6-40c2-4ec5-a8f3-02ed5776d991/deploy-status)](https://app.netlify.com/sites/osdc/deploys)
 
 Repository containing the source code of OSDC's website built on [GatsbyJS](http://gatsbyjs.org) and [ReactJS](https://reactjs.org) hosted on [Netlify](app.netlify.com).<br>
 
