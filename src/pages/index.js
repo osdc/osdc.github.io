@@ -169,7 +169,7 @@ const Subheading = styled.span`
   font-size: 23px;
   font-family: "Assistant", sans-serif;
   margin-top: -17px;
-  width: 300px;
+  width: 360px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -477,7 +477,7 @@ export default () => (
       <Gradientbox>
         <Logo>OSDC</Logo>
       </Gradientbox>
-      <Subheading>Open Source Developers Club</Subheading>
+      <Subheading>Open Source Developers Community</Subheading>
       <Arrowdown>
         <a href="#aboutsection" onClick={handleArrowClick}>
           <FontAwesomeIcon icon="angle-double-down" color="#ffca28" size="2x" />
