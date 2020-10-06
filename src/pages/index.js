@@ -529,7 +529,7 @@ export default () => (
             <span>FACEBOOK</span>
           </FacebookLink>
         </Alink>
-        <Alink href="https://osdc.github.io/blog/" target="_blank">
+        <Alink href="https://osdcblog.netlify.app/" target="_blank">
           <BlogLink>
             <span>BLOG</span>
           </BlogLink>
